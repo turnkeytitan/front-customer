@@ -1,1 +1,78 @@
-<p>result works!</p>
+<div class="container my-5">
+  <button (click)="goBack()" class="btn btn-primary">Volver</button>
+  <div class="row justify-content-center">
+    <h1 class="text-center">Información básica</h1>
+  </div>
+  <div class="row justify-content-center" *ngIf="customer; else noCustomer">
+    <div class="col-md-4 row gap-3">
+      <label for="fs">Primer apellido</label>
+      <input
+        type="text"
+        class="text-black-50"
+        name="fs"
+        id="fs"
+        [value]="customer.firstSurname"
+        disabled
+      />
+      <label for="fn">Primer nombre</label>
+      <input
+        type="text"
+        class="text-black-50"
+        name="fn"
+        id="fn"
+        [value]="customer.firstName"
+        disabled
+      />
+      <label for="ss">Segundo apellido</label>
+      <input
+        type="text"
+        class="text-black-50"
+        name="ss"
+        id="ss"
+        [value]="customer.secondSurname"
+        disabled
+      />
+      <label for="sn">Segundo nombre</label>
+      <input
+        type="text"
+        class="text-black-50"
+        name="sn"
+        id="sn"
+        [value]="customer.secondName"
+        disabled
+      />
+      <label for="ph">Teléfono</label>
+      <input
+        class="text-black-50"
+        type="text"
+        name="ph"
+        id="ph"
+        [value]="customer.phone"
+        disabled
+      />
+      <label for="ad">Dirección</label>
+      <input
+        type="text"
+        class="text-black-50"
+        name="ad"
+        id="ad"
+        [value]="customer.address"
+        disabled
+      />
+      <label for="ci">Ciudad de residencia</label>
+      <input
+        class="text-black-50"
+        type="text"
+        name="ci"
+        id="ci"
+        [value]="customer.city"
+        disabled
+      />
+    </div>
+  </div>
+  <ng-template #noCustomer>
+    <div class="row">
+      <p>No parece haber nada aquí</p>
+    </div>
+  </ng-template>
+</div>

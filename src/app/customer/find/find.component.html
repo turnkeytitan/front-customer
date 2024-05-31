@@ -1,1 +1,39 @@
-<p>find works!</p>
+<div class="container">
+  <div class="row justify-content-center gap-5 mt-5">
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="row col-md-4 gap-5">
+      <div class="form-group">
+        <label for="documentType">Tipo de documento</label>
+        <select
+          id="documentType"
+          formControlName="documentType"
+          class="form-control"
+          (change)="onInputChange()"
+        >
+          <option value="" disabled selected>Seleccione...</option>
+          <option value="C">Cédula de ciudadanía</option>
+          <option value="P">Pasaporte</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="documentNumber">Número de documento</label>
+        <input
+          id="documentNumber"
+          formControlName="documentNumber"
+          type="text"
+          class="form-control"
+          (input)="onInputChange()"
+        />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="isButtonDisabled"
+      >
+        Buscar
+      </button>
+      <div *ngIf="errorMessage" class="alert alert-danger mt-2">
+        {{ errorMessage }}
+      </div>
+    </form>
+  </div>
+</div>

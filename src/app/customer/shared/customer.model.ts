@@ -1,9 +1,9 @@
 export interface Customer {
-  primerNombre: string;
-  segundoNombre: string;
-  primerApellido: string;
-  segundoApellido: string;
-  telefono: string;
-  dirección: string;
-  ciudadDeResidencia: string;
+  firstName: string;
+  secondName: string;
+  firstSurname: string;
+  secondSurname: string;
+  phone: string;
+  address: string;
+  city: string;
 }

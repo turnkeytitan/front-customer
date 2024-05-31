@@ -13,7 +13,7 @@ import { Customer } from './customer.model';
   providedIn: 'root',
 })
 export class CustomerService {
-  private apiUrl = `${environment.CUSTOMER_API}/api/customers`;
+  private apiUrl = `${environment.CUSTOMER_API}/customers`;
 
   constructor(private http: HttpClient) {}
 
